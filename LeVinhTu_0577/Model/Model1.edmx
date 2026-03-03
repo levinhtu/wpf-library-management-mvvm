@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SQL_SachModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LOAI">
+          <Key>
+            <PropertyRef Name="MaLoai" />
+          </Key>
+          <Property Name="MaLoai" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenLoai" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SACH">
+          <Key>
+            <PropertyRef Name="Id_Sach" />
+          </Key>
+          <Property Name="Id_Sach" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaSach" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenSach" Type="nvarchar" MaxLength="200" />
+          <Property Name="MaLoai" Type="nvarchar" MaxLength="20" />
+          <Property Name="NgayXuatBan" Type="date" />
+        </EntityType>
+        <EntityType Name="TAIKHOAN">
+          <Key>
+            <PropertyRef Name="TenDangNhap" />
+          </Key>
+          <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="SQL_SachModelStoreContainer">
+          <EntitySet Name="LOAI" EntityType="Self.LOAI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SACH" EntityType="Self.SACH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SQL_SachModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="LOAI">
+          <Key>
+            <PropertyRef Name="MaLoai" />
+          </Key>
+          <Property Name="MaLoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenLoai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SACH">
+          <Key>
+            <PropertyRef Name="Id_Sach" />
+          </Key>
+          <Property Name="Id_Sach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaSach" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenSach" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MaLoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NgayXuatBan" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="SQL_SachEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LOAI" EntityType="Self.LOAI" />
+          <EntitySet Name="SACH" EntityType="Self.SACH" />
+          <EntitySet Name="TAIKHOAN" EntityType="SQL_SachModel.TAIKHOAN" />
+        </EntityContainer>
+        <EntityType Name="TAIKHOAN">
+          <Key>
+            <PropertyRef Name="TenDangNhap" />
+          </Key>
+          <Property Name="TenDangNhap" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SQL_SachModelStoreContainer" CdmEntityContainer="SQL_SachEntities">
+          <EntitySetMapping Name="LOAI">
+            <EntityTypeMapping TypeName="SQL_SachModel.LOAI">
+              <MappingFragment StoreEntitySet="LOAI">
+                <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+                <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SACH">
+            <EntityTypeMapping TypeName="SQL_SachModel.SACH">
+              <MappingFragment StoreEntitySet="SACH">
+                <ScalarProperty Name="Id_Sach" ColumnName="Id_Sach" />
+                <ScalarProperty Name="MaSach" ColumnName="MaSach" />
+                <ScalarProperty Name="TenSach" ColumnName="TenSach" />
+                <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+                <ScalarProperty Name="NgayXuatBan" ColumnName="NgayXuatBan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAIKHOAN">
+            <EntityTypeMapping TypeName="SQL_SachModel.TAIKHOAN">
+              <MappingFragment StoreEntitySet="TAIKHOAN">
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

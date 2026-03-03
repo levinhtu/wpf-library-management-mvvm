@@ -1,0 +1,35 @@
+﻿<Window x:Class="LeVinhTu_0577.View.DangKy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Đăng ký" Height="450" Width="800">
+    <Grid>
+        <Label Content="Tên Đăng Nhập" FontSize="22"
+               HorizontalAlignment="Left" Margin="100,51,0,0"
+               VerticalAlignment="Top" Width="183"/>
+        <TextBox x:Name="txt_tenDK" FontSize="22"
+                 HorizontalAlignment="Left" Height="51"
+                 Margin="375,51,0,0" VerticalAlignment="Top" Width="232"/>
+
+        <Label Content="Mật Khẩu" FontSize="22"
+               HorizontalAlignment="Left" Margin="100,152,0,0"
+               VerticalAlignment="Top" Width="183"/>
+        <TextBox x:Name="txt_MK_DK" FontSize="22"
+                 HorizontalAlignment="Left" Height="51"
+                 Margin="375,152,0,0" VerticalAlignment="Top" Width="232"/>
+
+        <Label Content="Nhập lại Mật Khẩu" FontSize="22"
+               HorizontalAlignment="Left" Margin="100,253,0,0"
+               VerticalAlignment="Top" Width="230"/>
+        <TextBox x:Name="txt_MK_XN" FontSize="22"
+                 HorizontalAlignment="Left" Height="51"
+                 Margin="375,253,0,0" VerticalAlignment="Top" Width="232"/>
+
+        <Button Content="Đăng Ký" FontSize="24" Click="DangKy_C"
+                HorizontalAlignment="Left" Height="72"
+                Margin="159,329,0,0" VerticalAlignment="Top" Width="174"/>
+
+        <Button Content="Hủy" FontSize="24" Click="Huy_C"
+                HorizontalAlignment="Left" Height="72"
+                Margin="395,329,0,0" VerticalAlignment="Top" Width="174"/>
+    </Grid>
+</Window>

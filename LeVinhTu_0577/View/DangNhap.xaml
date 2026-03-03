@@ -1,0 +1,19 @@
+﻿<Window x:Class="LeVinhTu_0577.View.DangNhap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LeVinhTu_0577.View"
+        mc:Ignorable="d"
+        Title="DangNhap" Height="450" Width="800">
+    <Grid>
+        <Label Content="Tên Đăng Nhập" FontSize="22" HorizontalAlignment="Left" Height="51" Margin="100,51,0,0" VerticalAlignment="Top" Width="183"/>
+        <TextBox x:Name="txt_tenDN" FontSize="22" HorizontalAlignment="Left" Height="51" Margin="375,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232"/>
+        <Label Content="Mật Khẩu" FontSize="22" HorizontalAlignment="Left" Height="51" Margin="100,152,0,0" VerticalAlignment="Top" Width="183"/>
+        <TextBox x:Name="txt_MK" FontSize="22" HorizontalAlignment="Left" Height="51" Margin="375,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232"/>
+        <StatusBar Margin="299,360,0,0"/>
+        <TextBox x:Name="txt_timeBox" FontSize="18" HorizontalAlignment="Left" Height="42" Margin="338,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434"/>
+        <Button Content="Đăng Nhập" FontSize="24" Click="DangNhap_C" HorizontalAlignment="Left" Height="72" Margin="159,247,0,0" VerticalAlignment="Top" Width="174"/>
+        <Button Content="Đăng Ký" FontSize="24" Click="DangKy_C" HorizontalAlignment="Left" Height="72" Margin="395,247,0,0" VerticalAlignment="Top" Width="174"/>
+    </Grid>
+</Window>
